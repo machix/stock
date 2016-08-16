@@ -4,6 +4,7 @@ import {mount} from 'react-mounter';
 import {MainLayout} from './layouts/MainLayout.jsx';
 import ResolutionsWrapper from './resolutions/ResolutionsWrapper.jsx';
 import ArticulosWrapper from './articulos/ArticulosWrapper.jsx';
+import About from './About.jsx';
 
 FlowRouter.route('/', {
   action() {
@@ -18,6 +19,15 @@ FlowRouter.route('/articulos', {
   action() {
     mount(MainLayout, {
       content: (<ArticulosWrapper />)
+    }
+    )
+  }
+});
+
+FlowRouter.route('/about', {
+  action() {
+    mount(MainLayout, {
+      content: (<About />)
     }
     )
   }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AccountsUI from '../AccountsUI.jsx';
+
 export const MainLayout= ({content}) => (
   <div className="main-layout">
     <header>
@@ -8,6 +10,7 @@ export const MainLayout= ({content}) => (
         <a href="/">Resolutions</a>
         <a href="/articulos">Articulos</a>
         <a href="/about">About</a>
+        <AccountsUI />
       </nav>
     </header>
     <main>

@@ -17,7 +17,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 
     this.state = {
       subscription: {
-        resolutions: Meteor.subscribe("allResolutions"),
+        resolutions: Meteor.subscribe("userResolutions"),
         articulos: Meteor.subscribe("allArticulos")
       }
     }
@@ -40,7 +40,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
   render() {
     return (
       <div>
-        <h1>Articulos</h1>
+        <h1>Articulos - {Session.get('test')}</h1>
         <ResolutionsForm />
         <ul className="resolutions">
           {this.resolutions().map( (resolution)=>{

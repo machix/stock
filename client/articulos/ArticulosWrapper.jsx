@@ -14,7 +14,7 @@ export default class ArticulosWrapper extends TrackerReact(React.Component) {
 
     this.state = {
       subscription: {
-        resolutions: Meteor.subscribe("allArticulos")
+        articulos: Meteor.subscribe("allArticulos")
       }
     }
   }
