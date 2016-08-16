@@ -9,6 +9,20 @@ Articulos = new Mongo.Collection("articulos");
 
 export default class ArticulosWrapper extends TrackerReact(React.Component) {
 
+  constructor() {
+    super();
+
+    this.state = {
+      subscription: {
+        resolutions: Meteor.subscribe("allArticulos")
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    this.state.subscription.articulos.stop();
+  }
+
   articulos() {
     return Articulos.find().fetch();
   }

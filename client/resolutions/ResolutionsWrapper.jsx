@@ -12,6 +12,21 @@ Resolutions = new Mongo.Collection("resolutions");
 //Articulos = new Mongo.Collection("articulos");
 
 export default class ResolutionsWrapper extends TrackerReact(React.Component) {
+  constructor() {
+    super();
+
+    this.state = {
+      subscription: {
+        resolutions: Meteor.subscribe("allResolutions"),
+        articulos: Meteor.subscribe("allArticulos")
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    this.state.subscription.resolutions.stop();
+    this.state.subscription.articulos.stop();
+  }
 
   resolutions() {
     return Resolutions.find().fetch();
