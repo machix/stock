@@ -7,13 +7,10 @@ export default class ArticulosForm extends Component {
       var codigo = this.refs.codigo.value.trim();
       var text = this.refs.articulo.value.trim();
       if (codigo != "" & text !="") {
-        Articulos.insert({
-          codigo: codigo,
-          descripcion: text,
-          createdAt: new Date()
-        });
-        this.refs.codigo.value = "";
-        this.refs.articulo.value = "";
+        Meteor.call('addArticulo',codigo,text, ()=> {
+          this.refs.codigo.value = "";
+          this.refs.articulo.value = "";
+        });    
       }
     }
 
