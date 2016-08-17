@@ -6,6 +6,7 @@ import ResolutionsWrapper from './resolutions/ResolutionsWrapper.jsx';
 import ArticulosWrapper from './articulos/ArticulosWrapper.jsx';
 import About from './About.jsx';
 import ResolutionDetail from './resolutions/ResolutionDetail.jsx';
+import Buscador from './buscador/Buscador.jsx';
 
 FlowRouter.route('/', {
   action() {
@@ -13,6 +14,14 @@ FlowRouter.route('/', {
       content: (<ResolutionsWrapper />)
     }
     )
+  }
+});
+
+FlowRouter.route('/buscador', {
+  action() {
+    mount(MainLayout, {
+      content: (<Buscador />)
+    })
   }
 });
 
