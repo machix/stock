@@ -12,3 +12,7 @@ Meteor.publish("userResolutions", function() {
 Meteor.publish("allArticulos", function() {
   return Articulos.find();
 })
+
+Meteor.publish("buscar", function(codigo) {
+  return Articulos.find({codigo:codigo});
+})
