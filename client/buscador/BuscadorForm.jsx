@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
+import Buscador2 from './Buscador2.jsx';
 
 export default class BuscadorForm extends TrackerReact(Component) {
 
@@ -39,6 +40,7 @@ export default class BuscadorForm extends TrackerReact(Component) {
     }
     return (
       <div>
+      <Buscador2 />
       <form className="new-resolution" onSubmit={this.buscar.bind(this)} >
       <input
       type="text"
@@ -47,6 +49,7 @@ export default class BuscadorForm extends TrackerReact(Component) {
        />
       </form>
         <h1>{res.descripcion}</h1>
+
       </div>
     )
   }

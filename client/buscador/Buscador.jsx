@@ -4,6 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import BuscadorForm from './BuscadorForm.jsx';
 
 export default class Buscador extends Component {
+
   render() {
     return (
       <ReactCSSTransitionGroup
