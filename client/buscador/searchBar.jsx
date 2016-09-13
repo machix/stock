@@ -7,9 +7,7 @@ export default class searchBar extends Component {
   }
 
   handleChange () {
-    this.props.onUserInput(
-      this.refs.filterTextInput.value
-    )
+    this.props.onUserInput(this.refs.filterTextInput.value)
   }
 
   render() {

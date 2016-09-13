@@ -3,8 +3,9 @@ import React, {Component} from 'react';
 import searchBar from './searchBar.jsx';
 
 export default class Buscador2 extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
     this.state = {
       filterText:""
     }
