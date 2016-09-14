@@ -9,7 +9,7 @@ export default class BuscadorForm extends TrackerReact(Component) {
     super();
 
     this.state = {
-      filterText: "",
+      filterText2: "",
       subscription: {
         articulos: Meteor.subscribe("buscar","111")
       }
@@ -20,15 +20,16 @@ export default class BuscadorForm extends TrackerReact(Component) {
     this.state.subscription.articulos.stop();
   }
 
+
   articulos() {
-    return Articulos.find({codigo:this.state.filterText}).fetch();
+    return Articulos.find({codigo:this.state.filterText2}).fetch();
   }
 
   buscar (event){
     event.preventDefault();
     var text = this.refs.buscador.value.trim();
-    this.setState({filterText:text,});
-    console.log(this.state.filterText);
+    this.setState({filterText2:text,});
+   console.log(this.state.filterText2);
 
   }
 

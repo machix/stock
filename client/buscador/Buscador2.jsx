@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-import searchBar from './searchBar.jsx';
+import SearchBar from './SearchBar.jsx';
 
 export default class Buscador2 extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      filterText:""
+      filterText:"",
     }
   }
 
@@ -18,11 +18,13 @@ handleUserInput(filterText) {
 }
 
 
+
   render() {
+    console.log(this.state.filterText);
     return(
-      <searchBar
+      <SearchBar
           filterText={this.state.filterText}
-          onUserInput={this.handleUserInput}
+          onUserInput={this.handleUserInput.bind(this)}
         />
     )
   }

@@ -1,25 +1,29 @@
 import React, {Component} from 'react';
 
-export default class searchBar extends Component {
+export default class SearchBar extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   handleChange () {
-    this.props.onUserInput(this.refs.filterTextInput.value)
+    this.props.onUserInput(
+      this.refs.filterTextInput.value.trim()
+    )
   }
 
   render() {
     return(
+      <div className="buscador">
       <form>
         <input
           type="text"
           placeholder="Search..."
           value={this.props.filterText}
           ref="filterTextInput"
-          onChange={this.handleChange} />
+          onChange={this.handleChange.bind(this)} />
       </form>
+      </div>
     )
   }
 }
