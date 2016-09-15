@@ -41,7 +41,7 @@ export default class BuscadorForm extends TrackerReact(Component) {
     }
     return (
       <div>
-      <Buscador2 />
+      <Buscador2 products={PRODUCTS}/>
       <form className="new-resolution" onSubmit={this.buscar.bind(this)} >
       <input
       type="text"
@@ -55,3 +55,12 @@ export default class BuscadorForm extends TrackerReact(Component) {
     )
   }
 }
+
+var PRODUCTS = [
+  {_id:'1', category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+{_id:'2', category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+{_id:'3', category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+{_id:'4', category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+{_id:'5', category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+{_id:'6', category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+];
